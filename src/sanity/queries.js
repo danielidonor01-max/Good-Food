@@ -5,11 +5,10 @@ import fallbackData from '../data/menu.json';
 export async function getCombos() {
   try {
     const combos = await client.fetch(`*[_type == "combo" && is_active == true] | order(_createdAt asc)`);
-    if (combos && combos.length > 0) return combos;
-    return fallbackData.combos || [];
+    return combos || [];
   } catch (error) {
-    console.error("Sanity fetch failed, using fallback combos:", error);
-    return fallbackData.combos || [];
+    console.error("Sanity fetch failed:", error);
+    return [];
   }
 }
 
@@ -17,11 +16,10 @@ export async function getCombos() {
 export async function getPromos() {
   try {
     const promos = await client.fetch(`*[_type == "promo" && is_active == true] | order(_createdAt asc)`);
-    if (promos && promos.length > 0) return promos;
-    return fallbackData.promos || [];
+    return promos || [];
   } catch (error) {
-    console.error("Sanity fetch failed, using fallback promos:", error);
-    return fallbackData.promos || [];
+    console.error("Sanity fetch failed:", error);
+    return [];
   }
 }
 
@@ -29,11 +27,10 @@ export async function getPromos() {
 export async function getCategories() {
   try {
     const categories = await client.fetch(`*[_type == "category"] | order(order asc)`);
-    if (categories && categories.length > 0) return categories;
-    return fallbackData.categories || [];
+    return categories || [];
   } catch (error) {
-    console.error("Sanity fetch failed, using fallback categories:", error);
-    return fallbackData.categories || [];
+    console.error("Sanity fetch failed:", error);
+    return [];
   }
 }
 
@@ -41,11 +38,10 @@ export async function getCategories() {
 export async function getMenuItems() {
   try {
     const items = await client.fetch(`*[_type == "menuItem" && is_available == true] | order(_createdAt asc)`);
-    if (items && items.length > 0) return items;
-    return fallbackData.items || [];
+    return items || [];
   } catch (error) {
-    console.error("Sanity fetch failed, using fallback items:", error);
-    return fallbackData.items || [];
+    console.error("Sanity fetch failed:", error);
+    return [];
   }
 }
 
@@ -53,10 +49,9 @@ export async function getMenuItems() {
 export async function getSettings() {
   try {
     const settings = await client.fetch(`*[_type == "settings"][0]`);
-    if (settings) return settings;
-    return null;
+    return settings || null;
   } catch (error) {
-    console.error("Sanity fetch failed, no fallback globals:", error);
+    console.error("Sanity fetch failed:", error);
     return null;
   }
 }

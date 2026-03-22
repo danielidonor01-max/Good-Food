@@ -8,6 +8,8 @@ import PromoModal from '../components/PromoModal';
 
 import { getCategories, getMenuItems, getPromos, getCombos, getSettings, getRestaurant } from '../sanity/queries';
 
+export const revalidate = 10; // Tells Vercel to fetch fresh data from Sanity every 10 seconds
+
 export default async function Home() {
   const [categories, items, promos, combos, settings, restaurant] = await Promise.all([
     getCategories(),
