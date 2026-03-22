@@ -1,0 +1,150 @@
+{
+  "restaurant": {
+    "name": "Buka Delight",
+    "description": "Authentic, energetic Nigerian cuisine delivered hot and fresh."
+  },
+  "promos": [
+    {
+      "id": "p1",
+      "title": "TGIF Special!",
+      "description": "Order any main meal and show this promo to the waiter for a free chilled Malt.",
+      "image": "/images/promo-1.png",
+      "CTA_text": "Claim",
+      "trigger_type": "time_delay",
+      "is_active": true
+    },
+    {
+      "id": "p2",
+      "title": "Weekend Jollof Fiesta",
+      "description": "20% off all party Jollof combos this weekend only. Don't miss out!",
+      "image": "/images/promo-2.png",
+      "CTA_text": "View Details",
+      "trigger_type": "interaction",
+      "is_active": true
+    },
+    {
+      "id": "p3",
+      "title": "Small Chops Platter",
+      "description": "The perfect appetizer! Samosas, Spring Rolls, Puff-puff and Peppered meat.",
+      "image": "/images/promo-3.png",
+      "CTA_text": "Order Now",
+      "trigger_type": "interaction",
+      "is_active": true
+    }
+  ],
+  "combos": [
+    {
+      "id": "c1",
+      "title": "Jollof Party Combo",
+      "description": "Party Jollof Rice, Grilled Turkey, Plantain, Coleslaw, and a chilled Malt.",
+      "image": "/images/jollof-combo.png",
+      "price": 8500,
+      "is_featured": true,
+      "is_active": true,
+      "items": [
+        {"type": "meal", "name": "Party Jollof Rice"},
+        {"type": "protein", "name": "Grilled Turkey"},
+        {"type": "extra", "name": "Plantain"},
+        {"type": "extra", "name": "Coleslaw"},
+        {"type": "drink", "name": "Chilled Malt"}
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Weekend Asun Special",
+      "description": "Spicy roasted goat meat with soft agege bread and a drink.",
+      "image": "/images/asun-special.png",
+      "price": 6000,
+      "is_featured": true,
+      "is_active": true,
+      "items": [
+        {"type": "protein", "name": "Spicy Asun"},
+        {"type": "meal", "name": "Agege Bread"},
+        {"type": "drink", "name": "Chilled Drink"}
+      ]
+    }
+  ],
+  "categories": [
+    { "id": "cat1", "name": "Rice Dishes", "icon": "Flame" },
+    { "id": "cat2", "name": "Swallow & Soups", "icon": "Soup" },
+    { "id": "cat3", "name": "Grilled Proteins", "icon": "Drumstick" },
+    { "id": "cat4", "name": "Small Chops", "icon": "Pizza" },
+    { "id": "cat5", "name": "Drinks", "icon": "CupSoda" }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "categoryId": "cat1",
+      "name": "Smoky Party Jollof",
+      "description": "Authentic firewood Jollof rice enriched with Nigerian spices.",
+      "price": 3500,
+      "image": "/images/jollof.png",
+      "calories": 450,
+      "tags": ["Popular", "Spicy"]
+    },
+    {
+      "id": "item2",
+      "categoryId": "cat1",
+      "name": "Ofada Rice & Ayamase",
+      "description": "Local Ofada rice served with spicy green pepper sauce and assorted meat.",
+      "price": 4500,
+      "image": "/images/ofada.png",
+      "calories": 620
+    },
+    {
+      "id": "item3",
+      "categoryId": "cat2",
+      "name": "Pounded Yam & Egusi",
+      "description": "Smooth, fluffy pounded yam served with rich Egusi soup and dried fish.",
+      "price": 5000,
+      "image": "/images/egusi.png",
+      "calories": 850,
+      "tags": ["Classic"]
+    },
+    {
+      "id": "item4",
+      "categoryId": "cat2",
+      "name": "Amala & Ewedu",
+      "description": "Hot Amala served with Ewedu, Gbegiri, and spicy Buka stew.",
+      "price": 3800,
+      "image": "/images/amala.png",
+      "calories": 710
+    },
+    {
+      "id": "item5",
+      "categoryId": "cat3",
+      "name": "Spicy Grilled Croaker",
+      "description": "Whole croaker fish marinated in local spices and grilled to perfection.",
+      "price": 8500,
+      "image": "/images/croaker.png",
+      "calories": 420
+    },
+    {
+      "id": "item6",
+      "categoryId": "cat3",
+      "name": "Peppered Snail",
+      "description": "Large snails sautéed in a fiery onion and habanero pepper mix.",
+      "price": 7000,
+      "image": "/images/snail.png",
+      "calories": 250,
+      "tags": ["Premium"]
+    },
+    {
+      "id": "item7",
+      "categoryId": "cat4",
+      "name": "Classic Small Chops",
+      "description": "Mix of spring rolls, samosas, puff-puff, and peppered meat.",
+      "price": 3000,
+      "image": "/images/smallchops.png"
+    },
+    {
+      "id": "item8",
+      "categoryId": "cat5",
+      "name": "Chilled Zobo Drink",
+      "description": "Refreshing hibiscus drink brewed with ginger and pineapple.",
+      "price": 1000,
+      "image": "/images/zobo.png",
+      "calories": 90
+    }
+  ]
+}
