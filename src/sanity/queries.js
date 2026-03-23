@@ -1,8 +1,9 @@
 import { client } from './client';
+
 // Fetch Combos
 export async function getCombos() {
   try {
-    const combos = await client.fetch(`*[_type == "combo" && is_active == true] {
+    const combos = await client.fetch(`*[_type == "combo" && is_active != false] {
       ...,
       "image": image.asset->url
     } | order(_createdAt asc)`);
@@ -16,7 +17,7 @@ export async function getCombos() {
 // Fetch Promos
 export async function getPromos() {
   try {
-    const promos = await client.fetch(`*[_type == "promo" && is_active == true] {
+    const promos = await client.fetch(`*[_type == "promo" && is_active != false] {
       ...,
       "image": image.asset->url
     } | order(_createdAt asc)`);
@@ -41,7 +42,7 @@ export async function getCategories() {
 // Fetch Menu Items
 export async function getMenuItems() {
   try {
-    const items = await client.fetch(`*[_type == "menuItem" && is_available == true] {
+    const items = await client.fetch(`*[_type == "menuItem" && is_available != false] {
       ...,
       "image": image.asset->url
     } | order(_createdAt asc)`);
