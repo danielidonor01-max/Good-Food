@@ -1,10 +1,11 @@
 import { client } from './client';
-import fallbackData from '../data/menu.json';
-
 // Fetch Combos
 export async function getCombos() {
   try {
-    const combos = await client.fetch(`*[_type == "combo" && is_active == true] | order(_createdAt asc)`);
+    const combos = await client.fetch(`*[_type == "combo" && is_active == true] {
+      ...,
+      "image": image.asset->url
+    } | order(_createdAt asc)`);
     return combos || [];
   } catch (error) {
     console.error("Sanity fetch failed:", error);
@@ -15,7 +16,10 @@ export async function getCombos() {
 // Fetch Promos
 export async function getPromos() {
   try {
-    const promos = await client.fetch(`*[_type == "promo" && is_active == true] | order(_createdAt asc)`);
+    const promos = await client.fetch(`*[_type == "promo" && is_active == true] {
+      ...,
+      "image": image.asset->url
+    } | order(_createdAt asc)`);
     return promos || [];
   } catch (error) {
     console.error("Sanity fetch failed:", error);
@@ -37,7 +41,10 @@ export async function getCategories() {
 // Fetch Menu Items
 export async function getMenuItems() {
   try {
-    const items = await client.fetch(`*[_type == "menuItem" && is_available == true] | order(_createdAt asc)`);
+    const items = await client.fetch(`*[_type == "menuItem" && is_available == true] {
+      ...,
+      "image": image.asset->url
+    } | order(_createdAt asc)`);
     return items || [];
   } catch (error) {
     console.error("Sanity fetch failed:", error);
@@ -57,5 +64,8 @@ export async function getSettings() {
 }
 
 export async function getRestaurant() {
-  return fallbackData.restaurant;
+  return {
+    name: "Buka Delight",
+    description: "Authentic, energetic Nigerian cuisine delivered hot and fresh."
+  };
 }
